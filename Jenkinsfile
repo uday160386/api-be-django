@@ -14,18 +14,15 @@ pipeline{
             }  
     stage('Build-and-Tag') {
         steps {
-            script {
         app = docker.build("venmaum/omed:new")
-        }
         }
     }
     stage('Post-to-dockerhub') {
     steps {
-        script {
+
         docker.withRegistry('https://registry.hub.docker.com', 'Docker credentials') {
                 app.push("latest")
                         }
-            }
     }
     }
     stage('SECURITY-IMAGE-SCANNER'){
