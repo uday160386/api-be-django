@@ -5,11 +5,11 @@ pipeline{
             args '-u root:root'
         }
     }
-    stage('Initialize'){
+    stages{
+        stage('Initialize'){
         def dockerHome = tool 'myDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
-    stages{
             stage('Cloning Git') {
                 /* Let's make sure we have the repository cloned to our workspace */
             steps {
