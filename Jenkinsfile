@@ -6,11 +6,7 @@ pipeline{
         }
     }
     stages{
-        stage('Initialize'){
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
-            stage('Cloning Git') {
+         stage('Cloning Git') {
                 /* Let's make sure we have the repository cloned to our workspace */
             steps {
                 checkout scm
