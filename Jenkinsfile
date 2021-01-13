@@ -14,6 +14,7 @@ pipeline{
             }  
     stage('Build-and-Tag') {
         steps {
+            sudo apt-get install docker.io
             script {
         app = docker.build("venmaum/omed:new")
         }
