@@ -1,5 +1,5 @@
-node ('any'){  
-    def app
+pipelin{  
+    stages{
     stage('Cloning Git') {
         /* Let's make sure we have the repository cloned to our workspace */
        checkout scm
@@ -15,5 +15,6 @@ node ('any'){
          }
     stage('SECURITY-IMAGE-SCANNER'){
         build 'omedicine'
+    }
     }
 }
