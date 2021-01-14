@@ -20,7 +20,7 @@ pipeline{
     stage('Post-to-dockerhub') {
     steps {
         script {
-        docker.withRegistry('https://registry.hub.docker.com', 'Docker credentials') {
+        docker.withRegistry('https://registry.hub.docker.com', 'Docker_credentials') {
                 app.push("latest")
                         }
             }
