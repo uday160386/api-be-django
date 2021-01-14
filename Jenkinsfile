@@ -26,10 +26,11 @@ pipeline{
             }
     }
     }
-    stage('SECURITY-IMAGE-SCANNER'){
-        steps {
-        build 'omedicine'
+     stage('SECURITY-IMAGE-SCANNER') {
+            steps {
+                sh 'echo "docker.io/venmaum/omed:latest `pwd`/Dockerfile" > anchore_images'
+                anchore name: 'anchore_images'
+            }
         }
-    }
     }  
 }
