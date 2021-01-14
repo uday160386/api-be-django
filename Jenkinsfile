@@ -1,5 +1,7 @@
 pipeline{  
+    environment {
     app =''
+    }
     agent any
     stages{
          stage('Cloning Git') {
