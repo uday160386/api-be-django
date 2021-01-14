@@ -28,7 +28,7 @@ pipeline{
     }
      stage('SECURITY-IMAGE-SCANNER') {
             steps {
-                sh 'echo "docker.io/venmaum/omed:latest `pwd`/Dockerfile" > anchore_images'
+                sh 'echo "https://hub.docker.com/r/venmaum/omed `pwd`/Dockerfile" > anchore_images'
                 anchore name: 'anchore_images'
             }
         }
